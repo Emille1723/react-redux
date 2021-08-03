@@ -1,5 +1,8 @@
-import { createStore } from 'redux';
+import { applyMiddleware, createStore } from 'redux';
 import reducers from './reducers/index';
+
+//needed for aysnc requests
+import thunk from 'redux-thunk';
 
 
 // instaniating the store
@@ -7,5 +10,6 @@ import reducers from './reducers/index';
 
 export const store = createStore(
 	reducers, 
-	{}
+	{},
+	applyMiddleware(thunk)
 )
