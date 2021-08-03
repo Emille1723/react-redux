@@ -1,25 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import { useSelector } from 'react-redux';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+	// can reference state like this to return all key values
+	// const state = useSelector( (state) => state);
+	// console.log(state);
+
+	//or return state.reducerName eg. 'state.account' to see that value alone returned
+	const account = useSelector( (state) => state.account);
+
+	console.log(account);
+
+	return (
+		<div className="App">
+			
+		</div>
+	);
 }
 
 export default App;
