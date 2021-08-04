@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital@1&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  font-size: 0;
+  text-decoration: none;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; }
+
+body {
+  position: relative;
+  z-index: auto;
+  height: 100vh;
+  width: 100%;
+  font-size: 0;
+  text-align: center;
+  overflow: hidden;
+  background: linear-gradient(rgba(11, 13, 15, 0.25), rgba(11, 13, 15, 0.25)), url("../media/backgrounds/cool-background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; }
+
+.inlineBlock, .app--wrapper, .app--wrapper .app--wrapper--item, .app--wrapper .taskview,
+.app--wrapper .tasklist, .app--wrapper .form, .button, .form .form--submit, .form .form--title, .form .form--input--wrapper, .form .form--input--wrapper[name="text"] .form--input, .form .form--input--wrapper[name="radio"] .form--input--label, .form .form--task--colour--selector--wrapper, .form .form--task--colour--selector--wrapper .form--task--colour--selector--wrapper--label, .form .form--task--colour--selector--wrapper .task--colour--selector--label {
+  position: relative;
+  z-index: auto;
+  display: inline-block;
+  vertical-align: top; }
+
+.absolute, .fixed, .form .form--input--wrapper[name="text"] .form--input--label {
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+.fixed {
+  position: fixed; }
+
+:root {
+  font-size: 1.8vh; }
+
+* {
+  color: white;
+  font-family: 'Poppins', sans-serif; }
+
+.app--wrapper {
+  width: 100%;
+  height: 100vh;
+  padding: 5vh;
+  text-align: left; }
+  .app--wrapper .app--wrapper--item, .app--wrapper .taskview,
+  .app--wrapper .tasklist, .app--wrapper .form {
+    width: 30%;
+    margin: 0 0 0 5%;
+    height: 100%;
+    padding: 5vh;
+    background-color: rgba(11, 13, 15, 0.5);
+    border-radius: 6px;
+    backdrop-filter: blur(10px); }
+    .app--wrapper .app--wrapper--item:first-child, .app--wrapper .taskview:first-child,
+    .app--wrapper .tasklist:first-child, .app--wrapper .form:first-child {
+      margin: 0; }
+
+.button, .form .form--submit {
+  background-color: #003eff;
+  border-radius: 6px;
+  text-transform: uppercase;
+  font-size: 1rem;
+  padding: 1.25vh 2.5vh;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out 0.2s; }
+
+.form .form--title {
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: bold; }
+.form .form--input--wrapper {
+  width: 100%;
+  margin: 5vh 0; }
+.form .form--input--wrapper[name="text"] .form--input--label {
+  top: 4vh;
+  width: 100%;
+  color: white;
+  font-size: .75rem;
+  text-transform: uppercase;
+  transition: all .3s ease; }
+.form .form--input--wrapper[name="text"] .form--input {
+  width: 100%;
+  padding: 4vh 0 2.5vh 0;
+  border-bottom: 1px solid white;
+  font-size: 1rem; }
+.form .form--input--wrapper[name="text"] .form--input:focus + .form--input--label {
+  top: 0%; }
+.form .form--input--wrapper[name="radio"] .form--input[name="radios"] {
+  display: none; }
+.form .form--input--wrapper[name="radio"] .form--input--label {
+  color: white;
+  font-size: .75rem;
+  text-transform: uppercase;
+  transition: all .3s ease;
+  padding: 1.25vh 2.5vh;
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.125);
+  margin: 0 2.5vh 0 0;
+  cursor: pointer; }
+.form .form--input--wrapper[name="radio"] #radio--deposit:checked + .form--input--label {
+  background-color: DarkSalmon;
+  color: black; }
+.form .form--input--wrapper[name="radio"] #radio--withdraw:checked + .form--input--label {
+  background-color: MediumSpringGreen;
+  color: black; }
+.form .form--task--colour--selector--wrapper {
+  width: 100%;
+  padding: 5vh 0; }
+  .form .form--task--colour--selector--wrapper .form--task--colour--selector--wrapper--label {
+    width: 100%;
+    font-size: .75rem;
+    color: white;
+    text-transform: uppercase;
+    padding: 0 0 2.5vh 0; }
+  .form .form--task--colour--selector--wrapper input[type="radio"] {
+    display: none; }
+  .form .form--task--colour--selector--wrapper .task--colour--selector--label {
+    height: 3vh;
+    width: 3vh;
+    border-radius: 100%;
+    cursor: pointer;
+    margin: 0 1.25vh 0 0; }
+  .form .form--task--colour--selector--wrapper .form--radio:checked + .task--colour--selector--label {
+    border: 3px solid white; }
+.form .form--submit {
+  font-size: .75rem;
+  background-color: DodgerBlue;
+  margin: 2.5vh 0 0 0; }
+
+/*# sourceMappingURL=index.css.map */

@@ -5,6 +5,9 @@ import { bindActionCreators } from 'redux';
 // this collects/imports all of the actions that have been exported from 'state/index.js' 
 import { actionCreators } from './state/index';
 
+
+import AppWrapper from './components/appWrapper';
+
 function App() {
 
 	// can reference state like this to return all key values
@@ -27,13 +30,7 @@ function App() {
 
 	return (
 		<div className="App">
-			<h1> { bank } </h1>
-			<button 
-				onClick={ () => depositMoney(100)}
-			>Deposit</button>
-			<button 
-				onClick={ () => withdrawMoney(50)}
-			>Withdraw</button>
+			<AppWrapper />
 		</div>
 	);
 }

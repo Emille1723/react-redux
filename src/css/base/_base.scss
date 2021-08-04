@@ -1,0 +1,44 @@
+*{
+    margin:0;
+    padding:0;
+    background-color:transparent;
+    box-sizing:border-box;
+    border:none;
+    outline:none;
+    font-size:0;
+    text-decoration:none;
+    background-repeat:no-repeat;
+    background-size:cover;
+	background-position:center center;
+}
+body{
+    position:relative;
+    z-index:auto;
+    height:100vh;
+    width:100%;
+    font-size:0;
+    text-align:center;
+    overflow:hidden;
+    background:
+        linear-gradient(rgba(11,13,15,.25), rgba(11,13,15,.25)),
+        url('../media/backgrounds/cool-background.png'),
+        // url('../media/backgrounds/cool-background.svg')
+    ;
+    background-repeat:no-repeat;
+    background-size:cover;
+	background-position:center center;
+}
+.inlineBlock{
+    position:relative;
+    z-index:auto;
+    display:inline-block;
+    vertical-align:top;
+}
+.absolute{
+    position:absolute;
+    top:0; left:0;
+}
+.fixed{
+    @extend .absolute;
+    position:fixed;
+}
