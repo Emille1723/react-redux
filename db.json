@@ -1,0 +1,32 @@
+{
+	"people" : [
+		{
+			"id" : 1,
+			"firstName" : "John",
+			"lastName" : "Doe",
+			"amount" : 45000,
+			"lastWorked" : "6.8.2021" 
+		},
+		{
+			"id" : 2,
+			"firstName" : "Jane",
+			"lastName" : "Doe",
+			"amount" : 25000,
+			"lastWorked" : "6.8.2021" 
+		},
+		{
+			"id" : 3,
+			"firstName" : "Junior",
+			"lastName" : "Doe",
+			"amount" : 5000,
+			"lastWorked" : "6.8.2021" 
+		},
+		{
+			"id" : 4,
+			"firstName" : "Janice",
+			"lastName" : "Doe",
+			"amount" : 15000,
+			"lastWorked" : "6.8.2021" 
+		}
+	]
+}

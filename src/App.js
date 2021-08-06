@@ -1,4 +1,5 @@
 import './App.css';
+import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
@@ -13,17 +14,30 @@ import AppWrapper from './components/appWrapper';
 
 function App() {
 
-	// const fetchUsers = async () => {
-	// 	const res = await fetch('https://reqres.in/api/users?page=2');
-	// 	const data = await res.json();
-	// 	const d = data.data;
+	useEffect( () => {
+		 const getUsers = async () => {
+			 const usersfromServer = await fetchUserss();
+		 };
 
-	// }
+		 getUsers();
+	}, []);
 
-	const fetchUsers = () => {
-		fetch('https://reqres.in/api/unknown')
-		.then(res => res.json())
-		.then(data => console.log(data.data));
+
+	const fetchUsers = async () => {
+		// fetch('https://reqres.in/api/unknown')
+		// .then(res => res.json())
+		// .then(data => console.log(data.data));
+
+		const res = await fetch('https://reqres.in/api/unknown')
+		const data = await res.json()
+		console.log(data.data)
+	}
+
+	const fetchUserss = async () => {
+		const res = await fetch('http://localhost:5000/people');
+		const data = await res.json();
+
+		console.log('Fetch users from db.json', data);
 	}
 
 	// can reference state like this to return all key values
@@ -42,9 +56,11 @@ function App() {
 	
 	console.log(ActionCreators);
 
-	console.log(bank);
+	console.log(`Amount => ${bank.amount}`);
 
-	fetchUsers();
+	const state = useSelector(	(state) => state );
+
+	console.log('state', state);
 
 	return (
 		<div className="App">

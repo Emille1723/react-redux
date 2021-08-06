@@ -1,0 +1,19 @@
+.userList{
+	@extend .app--wrapper--item;
+	.userList--title{
+		@extend .app--wrapper--item--title;
+	}
+	.userList--item{
+		@extend .inlineBlock;
+		width:100%;
+		background-color:rgba(255,255,255,.5);
+		padding:2.5vh;
+		.userList--item--name{
+			@extend .inlineBlock;
+			width:100%;
+			text-transform:capitalize;
+			font-size:.75rem;
+			
+		}
+	}
+}

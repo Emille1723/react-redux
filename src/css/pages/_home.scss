@@ -16,6 +16,12 @@
         &:first-child{
             margin:0;
         }
+		.app--wrapper--item--title{
+			@extend .inlineBlock;
+			font-size:1rem;
+			font-weight:bold;
+			text-transform:uppercase;
+		}
     }
     .taskview,
     .tasklist{

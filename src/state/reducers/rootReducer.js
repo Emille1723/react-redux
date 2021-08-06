@@ -3,8 +3,8 @@ import bankReducer from './bankReducer';
 
 // this file is used to call of the reducers so that they're referenced from one file
 
-const reducers = combineReducers({
+const rootReducer = combineReducers({
 	bank: bankReducer
 });
 
-export default reducers;
+export default rootReducer;

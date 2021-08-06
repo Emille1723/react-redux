@@ -1,13 +1,15 @@
 
-const initialState = 0;	
+const initialState = {
+	amount : 0
+};	
 
 // account reducer
 const reducer = ( state = initialState , action ) => {
 	switch (action.type){
 		case "deposit":
-			return state + action.payload;
+			return { amount : state + action.payload };
 		case "withdraw":
-			return state - action.payload;
+			return { amount : state - action.payload };
 		default:
 			return state;
 	}

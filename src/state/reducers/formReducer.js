@@ -3,3 +3,4 @@ const initialState = {
 	deposit : false,
 	withdraw : false,
 }
+

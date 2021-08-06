@@ -2,10 +2,7 @@
     @extend .app--wrapper--item;
    
     .form--title{
-        @extend .inlineBlock;
-        font-size:1rem;
-        text-transform:uppercase;
-        font-weight:bold;
+        @extend .app--wrapper--item--title;
     }
 	.form--input--wrapper{
 		@extend .inlineBlock;

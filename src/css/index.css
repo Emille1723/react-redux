@@ -26,7 +26,10 @@ body {
   background-position: center center; }
 
 .inlineBlock, .app--wrapper, .app--wrapper .app--wrapper--item, .app--wrapper .taskview,
-.app--wrapper .tasklist, .app--wrapper .form, .button, .form .form--submit, .form .form--title, .form .form--input--wrapper, .form .form--input--wrapper[name="text"] .form--input, .form .form--input--wrapper[name="radio"] .form--input--label, .form .form--task--colour--selector--wrapper, .form .form--task--colour--selector--wrapper .form--task--colour--selector--wrapper--label, .form .form--task--colour--selector--wrapper .task--colour--selector--label {
+.app--wrapper .tasklist, .app--wrapper .form, .app--wrapper .userList, .app--wrapper .app--wrapper--item .app--wrapper--item--title, .app--wrapper .taskview .app--wrapper--item--title,
+.app--wrapper .tasklist .app--wrapper--item--title, .app--wrapper .form .app--wrapper--item--title, .app--wrapper .userList .app--wrapper--item--title, .form .app--wrapper .app--wrapper--item .form--title, .form .app--wrapper .taskview .form--title,
+.form .app--wrapper .tasklist .form--title, .app--wrapper .form .form--title, .form .app--wrapper .userList .form--title, .userList .app--wrapper .app--wrapper--item .userList--title, .userList .app--wrapper .taskview .userList--title,
+.userList .app--wrapper .tasklist .userList--title, .userList .app--wrapper .form .userList--title, .app--wrapper .userList .userList--title, .button, .form .form--submit, .form .form--input--wrapper, .form .form--input--wrapper[name="text"] .form--input, .form .form--input--wrapper[name="radio"] .form--input--label, .form .form--task--colour--selector--wrapper, .form .form--task--colour--selector--wrapper .form--task--colour--selector--wrapper--label, .form .form--task--colour--selector--wrapper .task--colour--selector--label, .userList .userList--item, .userList .userList--item .userList--item--name {
   position: relative;
   z-index: auto;
   display: inline-block;
@@ -53,7 +56,7 @@ body {
   padding: 5vh;
   text-align: left; }
   .app--wrapper .app--wrapper--item, .app--wrapper .taskview,
-  .app--wrapper .tasklist, .app--wrapper .form {
+  .app--wrapper .tasklist, .app--wrapper .form, .app--wrapper .userList {
     width: 30%;
     margin: 0 0 0 5%;
     height: 100%;
@@ -62,8 +65,15 @@ body {
     border-radius: 6px;
     backdrop-filter: blur(10px); }
     .app--wrapper .app--wrapper--item:first-child, .app--wrapper .taskview:first-child,
-    .app--wrapper .tasklist:first-child, .app--wrapper .form:first-child {
+    .app--wrapper .tasklist:first-child, .app--wrapper .form:first-child, .app--wrapper .userList:first-child {
       margin: 0; }
+    .app--wrapper .app--wrapper--item .app--wrapper--item--title, .app--wrapper .taskview .app--wrapper--item--title,
+    .app--wrapper .tasklist .app--wrapper--item--title, .app--wrapper .form .app--wrapper--item--title, .app--wrapper .userList .app--wrapper--item--title, .form .app--wrapper .app--wrapper--item .form--title, .form .app--wrapper .taskview .form--title,
+    .form .app--wrapper .tasklist .form--title, .app--wrapper .form .form--title, .form .app--wrapper .userList .form--title, .userList .app--wrapper .app--wrapper--item .userList--title, .userList .app--wrapper .taskview .userList--title,
+    .userList .app--wrapper .tasklist .userList--title, .userList .app--wrapper .form .userList--title, .app--wrapper .userList .userList--title {
+      font-size: 1rem;
+      font-weight: bold;
+      text-transform: uppercase; }
 
 .button, .form .form--submit {
   background-color: #003eff;
@@ -74,10 +84,6 @@ body {
   cursor: pointer;
   transition: all 0.3s ease-in-out 0.2s; }
 
-.form .form--title {
-  font-size: 1rem;
-  text-transform: uppercase;
-  font-weight: bold; }
 .form .form--input--wrapper {
   width: 100%;
   margin: 5vh 0; }
@@ -132,5 +138,14 @@ body {
   font-size: .75rem;
   background-color: DodgerBlue;
   margin: 2.5vh 0 0 0; }
+
+.userList .userList--item {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 2.5vh; }
+  .userList .userList--item .userList--item--name {
+    width: 100%;
+    text-transform: capitalize;
+    font-size: .75rem; }
 
 /*# sourceMappingURL=index.css.map */
