@@ -1,1 +1,1 @@
-npm install redux react-redux redux-thunk
+npm install redux react-redux redux-thunk axios react-router-dom
