@@ -16,7 +16,6 @@ const Form = () => {
 
 	const handleSubmit = (evt) => {
 		evt.preventDefault();
-		console.log(`Amount entered ${amount}`);
 	}
 
 	return (
@@ -29,7 +28,7 @@ const Form = () => {
 					value = {amount}
 					// onChange = {handleChange}
 					name={"amount"}
-					onChange = { (evt) => setAmount(evt.target.value)	} 
+					onChange = { (evt) => setAmount(evt.target.value) } 
 					required
 				/>
 				<label className="form--input--label">amount to be tendered</label>

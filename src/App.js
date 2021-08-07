@@ -14,13 +14,7 @@ import AppWrapper from './components/appWrapper';
 
 function App() {
 
-	useEffect( () => {
-		 const getUsers = async () => {
-			 const usersfromServer = await fetchUserss();
-		 };
-
-		 getUsers();
-	}, []);
+	
 
 
 	const fetchUsers = async () => {
@@ -33,12 +27,6 @@ function App() {
 		console.log(data.data)
 	}
 
-	const fetchUserss = async () => {
-		const res = await fetch('http://localhost:5000/people');
-		const data = await res.json();
-
-		console.log('Fetch users from db.json', data);
-	}
 
 	// can reference state like this to return all key values
 	// const state = useSelector( (state) => state);
@@ -64,6 +52,7 @@ function App() {
 
 	return (
 		<div className="App">
+
 			<AppWrapper />
 		</div>
 	);
