@@ -14,19 +14,25 @@ import AppWrapper from './components/appWrapper';
 
 function App() {
 
-	
+	// useEffect( () => {
+	// 	const getUsers = async () => {
+	// 		const usersfromServer = await fetchUserss();
+	// 	};
+	// 	getUsers();
+	// }, []);
 
+	// const fetchUserss = async () => {
+	// 	const res = await fetch('http://localhost:5000/people');
+	// 	const data = await res.json();
 
-	const fetchUsers = async () => {
-		// fetch('https://reqres.in/api/unknown')
-		// .then(res => res.json())
-		// .then(data => console.log(data.data));
+	// 	return data;
 
-		const res = await fetch('https://reqres.in/api/unknown')
-		const data = await res.json()
-		console.log(data.data)
-	}
-
+	// 	// fetch('http://localhost:5000/people')
+	// 	// .then( (response) => response.json())
+	// 	// .then( res => {
+	// 	// 	return res;
+	// 	// });
+	// }
 
 	// can reference state like this to return all key values
 	// const state = useSelector( (state) => state);
@@ -39,20 +45,24 @@ function App() {
 	// can call all of the actionCreators like this
 	const ActionCreators = bindActionCreators(actionCreators, dispatch);
 
+
 	//or can call them in a destructured format
 	const { depositMoney, withdrawMoney } = bindActionCreators(actionCreators, dispatch);
 	
-	console.log(ActionCreators);
+	// console.log(ActionCreators);
 
-	console.log(`Amount => ${bank.amount}`);
+	// console.log(`Amount => ${bank.amount}`);
+
+	// const allUsers = useSelector((state) => state.users = fetchUserss());
 
 	const state = useSelector(	(state) => state );
 
 	console.log('state', state);
 
+
+
 	return (
 		<div className="App">
-
 			<AppWrapper />
 		</div>
 	);

@@ -1,26 +1,19 @@
-import React, {	useEffect} from 'react'
+import React, {	useState, useEffect} from 'react'
+import { useSelector } from 'react-redux';
 
 const UsersList = () => {
 
-	useEffect( () => {
-		const getUsers = async () => {
-			const usersfromServer = await fetchUserss();
-			
-		};
+	
 
-		getUsers();
-	}, []);
-
-	const fetchUserss = async () => {
-		const res = await fetch('http://localhost:5000/people');
-		const data = await res.json();
-
-		console.log('Fetch users from db.json', data);
-	}
 
 	return (
 		<div className = "userList">
 			<span className="userList--title">users</span>
+			{/* { allUsers.map((user) => (
+				<>
+					<span key={user.id}>{user.name}</span>
+				</>
+			))}; */}
 		</div>
 	)
 }

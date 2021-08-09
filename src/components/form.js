@@ -1,21 +1,48 @@
 import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+
 
 
 const Form = () => {
-
+	const dispatch = useDispatch();
 	const [amount, setAmount] = useState("");
+	const [transaction, setTransaction] = useState("");
 	const [deposit, setDeposit] = useState(false);
 	const [withdraw, setWithdraw] = useState(false);
 
-	const [data, setData] = useState({});
+	const submittedData = {
+		amount : '',
+		tranaction : 'some transaction value bruv',
+	};
 
 
 	// const handleChange = () => {
 	// 	setData(prev => ({...prev, [e.target.name]: [e.target.value]}))
 	// }
 
-	const handleSubmit = (evt) => {
+	const handleSubmit = evt => {
 		evt.preventDefault();
+		submittedData.amount = amount;
+		// submittedData.deposit = deposit;
+		// submittedData.withdraw = withdraw;
+		console.log('Submitted Data => ', submittedData);
+
+		setAmount('');
+		setDeposit(false);
+		setWithdraw(false);
+		setTransaction('');
+	}
+
+	const handleRadios = evt => {
+		evt.preventDefault();
+
+	}
+
+	const formActivity = () => {
+		dispatch({
+			type : 'NEW_TRANSACTION',
+			payload : submittedData
+		});
 	}
 
 	return (
@@ -26,7 +53,6 @@ const Form = () => {
 					type="text" 
 					className="form--input"
 					value = {amount}
-					// onChange = {handleChange}
 					name={"amount"}
 					onChange = { (evt) => setAmount(evt.target.value) } 
 					required
@@ -39,9 +65,9 @@ const Form = () => {
 					className="form--input"
 					name="radios"
 					id="radio--deposit"
-					checked = {deposit}
-					value = {deposit}
-					onChange = {(evt) => setDeposit(evt.target.checked)}
+					// checked = {deposit}
+					// value = {deposit}
+					onChange = {(evt) => setDeposit(evt.currentTarget.checked)}
 				/>
 				<label 
 					htmlFor="radio--deposit" 
@@ -51,9 +77,9 @@ const Form = () => {
 					className="form--input" 
 					name="radios"
 					id="radio--withdraw"
-					checked = {withdraw}
-					value = {withdraw}
-					onChange = {(evt) => setWithdraw(evt.target.checked)}
+					// checked = {withdraw}
+					// value = {withdraw}
+					onChange = {(evt) => setWithdraw(evt.currentTarget.checked)}
 				/>
 				<label 
 					htmlFor="radio--withdraw" 
