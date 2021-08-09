@@ -27,6 +27,13 @@
 			"lastName" : "Doe",
 			"amount" : 15000,
 			"lastWorked" : "6.8.2021" 
+		},
+		{
+			"id" : 5,
+			"firstName" : "Jenny",
+			"lastName" : "Doe",
+			"amount" : 175000,
+			"lastWorked" : "9.8.2021" 
 		}
 	]
 }

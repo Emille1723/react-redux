@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
+import { bindActionCreators } from 'redux';
+import { actionCreators } from '../state/index';
+
+
 
 
 const Form = () => {
@@ -12,8 +16,10 @@ const Form = () => {
 
 	const submittedData = {
 		amount : '',
-		tranaction : 'some transaction value bruv',
+		tranaction : '',
 	};
+
+	const { newTransaction } = bindActionCreators(actionCreators, dispatch);
 
 
 	// const handleChange = () => {
@@ -23,27 +29,28 @@ const Form = () => {
 	const handleSubmit = evt => {
 		evt.preventDefault();
 		submittedData.amount = amount;
-		// submittedData.deposit = deposit;
-		// submittedData.withdraw = withdraw;
-		console.log('Submitted Data => ', submittedData);
+		submittedData.transaction = 'some transaction value bruv';
+
 
 		setAmount('');
 		setDeposit(false);
 		setWithdraw(false);
 		setTransaction('');
+		newTransaction(submittedData);
+
+		// formActivity();
 	}
 
 	const handleRadios = evt => {
 		evt.preventDefault();
-
 	}
 
-	const formActivity = () => {
-		dispatch({
-			type : 'NEW_TRANSACTION',
-			payload : submittedData
-		});
-	}
+	// const formActivity = () => {
+	// 	dispatch({
+	// 		type : 'NEW_TRANSACTION',
+	// 		payload : submittedData
+	// 	});
+	// }
 
 	return (
 		<form className="form" onSubmit={handleSubmit}>
@@ -53,7 +60,6 @@ const Form = () => {
 					type="text" 
 					className="form--input"
 					value = {amount}
-					name={"amount"}
 					onChange = { (evt) => setAmount(evt.target.value) } 
 					required
 				/>
