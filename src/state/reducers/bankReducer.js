@@ -2,7 +2,7 @@
 const initialState = {
 	account: 999,
 	amount : 0,
-	transaction : ''
+	transactionType : ''
 };	
 
 const reducer = ( state = initialState , action ) => {

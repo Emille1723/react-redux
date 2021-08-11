@@ -17,7 +17,7 @@ const reducer = (	state = initialState, action) => {
 
 			// return {...state, formData : {...state.formData, payload}};
 
-			// return {...state, formData : {...state.formData, formData[amount] }};
+			return {...state, formData : {...state.formData, payload }};
 		default:
 			return state;
 	}
