@@ -10,6 +10,14 @@ export const loadUsers = (users) => {
 }
 
 
+
+const fetchUsers = () => async(dispatch, getState) => {
+	const url = 'http://localhost:5000/people';
+	const users = await fetch(url).then(res => res.json());
+	dispatch(loadUsers(users));
+};
+
+
 export const newTransaction = ( formData ) => {
 	return (dispatch) => {
 		dispatch({

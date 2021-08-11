@@ -18,11 +18,6 @@ const reducer = ( state = intialState , action) => {
 };
 
 
-// const fetchUsers = () => async(dispatch, getState) => {
-// 	const users = await fetch('http://localhost:5000/people').then(res => res.json());
-// 	dispatch(loadUsers(users));
-// };
-
 
 export default reducer;
 

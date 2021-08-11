@@ -16,7 +16,7 @@ const Form = () => {
 
 	const submittedData = {
 		amount : '',
-		tranaction : '',
+		transactionType : '',
 	};
 
 	const { newTransaction } = bindActionCreators(actionCreators, dispatch);
@@ -29,7 +29,7 @@ const Form = () => {
 	const handleSubmit = evt => {
 		evt.preventDefault();
 		submittedData.amount = amount;
-		submittedData.transaction = 'some transaction value bruv';
+		submittedData.transactionType = 'some transaction value bruv';
 
 
 		setAmount('');
