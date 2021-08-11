@@ -3,7 +3,7 @@
 export const loadUsers = (users) => {
 	return (dispatch) => {
 		dispatch({
-			type: "LOAD_USERS",
+			type: "FETCHED_USERS",
 			payload : users
 		});
 	}
@@ -11,10 +11,16 @@ export const loadUsers = (users) => {
 
 
 
-const fetchUsers = () => async(dispatch, getState) => {
+export const fetchUsers = () => async(dispatch) => {
 	const url = 'http://localhost:5000/people';
-	const users = await fetch(url).then(res => res.json());
-	dispatch(loadUsers(users));
+	try{
+		const users = await fetch(url).then(res => res.json());
+		dispatch(loadUsers(users));
+	}
+	catch(error){
+		console.log(error);
+	}
+	
 };
 
 

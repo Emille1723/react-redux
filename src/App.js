@@ -31,7 +31,7 @@ function App() {
 
 
 	//or can call them in a destructured format
-	const {fetchUsers, newTransaction, depositMoney, withdrawMoney } = bindActionCreators(actionCreators, dispatch);
+	const {newTransaction, depositMoney, withdrawMoney } = bindActionCreators(actionCreators, dispatch);
 
 
 
