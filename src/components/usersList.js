@@ -8,8 +8,8 @@ const UsersList = () => {
 	// useEffect = 
 	const dispatch = useDispatch();
 	// setting up actionCreators to fetchusers and update global state instead of typing i tlong way
-	const ActionCreators = bindActionCreators(actionCreators, dispatch);
-	const { fetchUsers } = bindActionCreators(actionCreators, dispatch);
+	// const ActionCreators = bindActionCreators(actionCreators, dispatch);
+	// const { fetchUsers } = bindActionCreators(actionCreators, dispatch);
 	const users = useSelector(	(state) => state.users);
 
 	return (

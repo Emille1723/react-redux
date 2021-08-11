@@ -1,18 +1,9 @@
-export const fetchUsers = (users) => {
-	return (dispatch) => {
-		// await fetch('http://localhost:5000/people')
-		// .then(	response => response.json())
-		// .then(users => {
-		// 	console.log('users =>', users);
-		// 	dispatch({
-		// 		type: "FETCHED_USERS",
-		// 		payload : users
-		// 	});
-		// 	}
-		// )
 
+
+export const loadUsers = (users) => {
+	return (dispatch) => {
 		dispatch({
-			type: "FETCHED_USERS",
+			type: "LOAD_USERS",
 			payload : users
 		});
 	}
