@@ -9,18 +9,4 @@
 	transition:$transition;
 }
 
-.userList--item--select{
-	@extend .button;
-	@extend .absolute;
-	top:50%; right:2.5vh; left:auto;
-	@include transY();
-	background-color:rgba(11,13,15,.5);
-	height:2.5vh;
-	width:2.5vh;
-	border-radius:100%;
-	font-size:0;
-	padding:0;
-	background-image:url('../media/icons/expand.svg');
-	background-size:40%;
-}
 

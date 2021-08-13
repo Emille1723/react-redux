@@ -6,10 +6,13 @@
 	.userList--item--wrapper{
 		@extend .inlineBlock;
 		width:100%;
+		.userList--radios{
+			display:none;
+		}
 		.userList--item{
 			@extend .inlineBlock;
 			width:100%;
-			background-color:rgba(11,13,15,.125);
+			background-color:rgba(11,13,15,.175);
 			padding:1.25vh 2.5vh 1.25vh 10vh;
 			margin:2.5vh 0 0 0;
 			border-radius:6px;
@@ -46,6 +49,28 @@
 			.userList--item--name{
 				// font-size:.775rem;
 				font-weight:bold;
+			}
+			.userList--item--selected{
+				@extend .absolute;
+				top:50%; right:2.5vh; left:auto;
+				@include transY();
+				background-color:rgba(11,13,15,.5);
+				height:2.5vh;
+				width:2.5vh;
+				border-radius:100%;
+				font-size:0;
+				padding:0;
+				background-image:url('../media/icons/dot.svg');
+				background-size:50%;
+				opacity:0;
+				transition:$transition;
+			}
+		}
+		.userList--radios:checked + .userList--item{
+			// background-color:rgba(30,144,255,.25);
+			background-color:rgba(255,255,255,.125);
+			.userList--item--selected{
+				opacity:1;
 			}
 		}
 		.userList--item:hover{

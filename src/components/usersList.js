@@ -58,9 +58,15 @@ const UsersList = () => {
 		<div className = "userList">
 			<span className="userList--title">users listing</span>
 			<div className="userList--item--wrapper">
-				{ users.map((user, i) => (
-					// <>
-						<span className="userList--item" key={user.id}>
+				{ users.map((user,i) => (
+					<>
+						<input className="userList--radios" 
+							id={user.id} 
+							type="radio" 
+							key={user.id} 
+							name="radios" 
+						/>
+						<label htmlFor={user.id} className="userList--item" key={user.id}>
 							<span className="userList--item--image" style={{borderColor:colours[i].colour}}>
 								<i></i>
 							</span>
@@ -71,11 +77,11 @@ const UsersList = () => {
 								${user.amount}
 							</span>
 							<span className="userList--item--lastWorked">
-								last worked => {user.lastWorked}
+								last worked : {user.lastWorked}
 							</span>
-							<button className="userList--item--select" onClick={userSelect(user.id)}></button>
-						</span>
-					//</>
+							<i className="userList--item--selected" onClick={userSelect(user.id)}></i>
+						</label>
+					</>
 				))}
 			</div>
 		</div>

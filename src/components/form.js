@@ -21,6 +21,9 @@ const Form = () => {
 
 	const { newTransaction } = bindActionCreators(actionCreators, dispatch);
 
+	const user = useSelector(	(state) => state.user);
+	console.log();
+
 
 	// const handleChange = () => {
 	// 	setData(prev => ({...prev, [e.target.name]: [e.target.value]}))
@@ -55,6 +58,7 @@ const Form = () => {
 	return (
 		<form className="form" onSubmit={handleSubmit}>
 			<span className="form--title">banking transactions</span>
+			<span className="form--selected--user"></span>
 			<div className="form--input--wrapper" name="text">
 				<input 
 					type="text" 
