@@ -47,13 +47,23 @@ const UsersList = () => {
         getUsers();
     }, []);
 
+	useEffect(() => {
+		const userSelect = async (id) => {
+			alert('checked => ', id);
+		}
+	}, {});
+
+
+	const returnID = (id) => {
+		alert('id => ', id);
+		return id;
+	}
+
 	const users = useSelector(	(state) => state.users.users);
 	console.log('userList component => ', users);
 
 
-	const userSelect = (id) => {
-		
-	}
+	
 	return (
 		<div className = "userList">
 			<span className="userList--title">users listing</span>
@@ -64,7 +74,8 @@ const UsersList = () => {
 							id={user.id} 
 							type="radio" 
 							key={user.id} 
-							name="radios" 
+							name="radios"
+							onChecked = {returnID(user.id)}
 						/>
 						<label htmlFor={user.id} className="userList--item" key={user.id}>
 							<span className="userList--item--image" style={{borderColor:colours[i].colour}}>

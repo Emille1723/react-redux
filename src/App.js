@@ -1,6 +1,5 @@
 import './App.css';
 import { useEffect, useState } from 'react';
-import uuid from 'react-uuid';
 import { useSelector, useDispatch } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
