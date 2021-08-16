@@ -1,0 +1,6 @@
+.transactions{
+	@extend .app--wrapper--item;
+	.transactions--title{
+		@extend .app--wrapper--item--title;
+	}
+}

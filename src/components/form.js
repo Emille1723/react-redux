@@ -21,14 +21,14 @@ const Form = () => {
 
 	const { newTransaction } = bindActionCreators(actionCreators, dispatch);
 
-	const user = useSelector(	(state) => state.user.payload);
-	console.log(user, 'from form.js');
+	// isSelected is a boolean that updates once an account is checked
+	const isSelect = useSelector( (state) => state.user.isSelected );
+
+	// user state
+	const user = useSelector( (state) => state.user.payload );
 
 
-	// const handleChange = () => {
-	// 	setData(prev => ({...prev, [e.target.name]: [e.target.value]}))
-	// }
-
+	
 	const handleSubmit = evt => {
 		evt.preventDefault();
 		submittedData.amount = amount;
@@ -58,9 +58,15 @@ const Form = () => {
 	return (
 		<form className="form" onSubmit={handleSubmit}>
 			<span className="form--title">banking transactions</span>
-			<span className="form--selected--user">
-				account selected : { user.firstName	} {	user.lastName }  <br/> <br/>  current balance { user.amount }
-			</span>
+			{isSelect 
+			?(	<span className="form--selected--user">
+			 		account selected : { user.firstName	} {	user.lastName }  <br/> <br/>  current balance:  ${ user.amount }
+				</span>)
+			: (
+				<span className="form--selected--user">
+			 		select an account to continue
+				</span>
+			)};
 			<div className="form--input--wrapper" name="text">
 				<input 
 					type="text" 
