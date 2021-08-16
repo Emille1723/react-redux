@@ -4,41 +4,12 @@ import { bindActionCreators } from 'redux';
 import { actionCreators } from '../state/index';
 
 const UsersList = () => {
-
-	
-
-	const colours = [
-        {
-            id:0,
-            colour : '#ff8a80'
-        },
-        {
-            id:1,
-            colour : '#26a69a'
-        },
-        {
-            id:2,
-            colour : '#ab47bc'
-        },
-        {
-            id:3,
-            colour : '#9575cd'
-        },
-        {
-            id:4,
-            colour : '#03a9f4'
-        },
-        {
-            id:5,
-            colour : '#607d8b'
-        },
-    ];
 	
 	// useEffect = 
 	const dispatch = useDispatch();
 	// setting up actionCreators to fetchusers and update global state instead of typing i tlong way
 	// const ActionCreators = bindActionCreators(actionCreators, dispatch);
-	const { selectUser, fetchUsers, loadUsers } = bindActionCreators(actionCreators, dispatch);
+	const { selectUser, fetchUsers, fetchTransactions } = bindActionCreators(actionCreators, dispatch);
 
 	useEffect(() => {
         const getUsers  = async () => {
@@ -52,7 +23,8 @@ const UsersList = () => {
 	const fetchUser = async (id, dispatch) => {
 		const res = await fetch(`http://localhost:5000/people/${id}`);
 		const user = await res.json();
-		selectUser(user);	
+		selectUser(user);
+		fetchTransactions(user.transactions);
 	}
 
 	// handle radio checked event to select user 
@@ -61,6 +33,9 @@ const UsersList = () => {
 		fetchUser(id);
 	}
 
+
+	// grab colours state
+	const colours = useSelector( (state) => state.colours.colours );
 	// grab users state
 	const users = useSelector(	(state) => state.users.users );
 

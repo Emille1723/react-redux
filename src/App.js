@@ -20,6 +20,7 @@ function App() {
 	console.log(state);
 
 	//or return state.reducerName eg. 'state.account' to see that value alone returned
+	const colours = useSelector( (state) => state.colours );
 	const form = useSelector( (state) => state.form );
 	const bank = useSelector( (state) => state.bank );
 	const user = useSelector( (state) => state.user );

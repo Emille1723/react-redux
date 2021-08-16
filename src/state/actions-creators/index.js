@@ -1,3 +1,25 @@
+export const fetchTransactions = (transactions) => {
+	return (dispatch) => {
+		dispatch({
+			type: "FETCHED_TRANSACTIONS",
+			payload : transactions
+		});
+	}
+};
+
+
+export const fetchColours = (colours) => {
+	return (dispatch) => {
+		dispatch({
+			type : "FETCH_COLOURS",
+			payload : colours
+		});
+	}
+};
+
+
+
+
 // loadUsers from api call action creator
 export const loadUsers = (users) => {
 	return (dispatch) => {

@@ -57,7 +57,7 @@
 			cursor:pointer;
 		}
 		.form--input[name="radios"]:checked + .form--input--label{
-			background-color:rgba(50,76,235,1);
+			background-color:$baseColor;
 		}
 		// #radio--deposit:checked + .form--input--label{
 		// 	background-color:DarkSalmon;
@@ -99,7 +99,7 @@
         @extend .button;
         font-size:.75rem;
         // background-color:rgba(255,255,255,.175);
-		background-color:rgba(50,76,235,1);
+		background-color:$baseColor;
         margin:2.5vh 0 0 0;
     }
 }
