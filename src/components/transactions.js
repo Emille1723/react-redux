@@ -24,8 +24,8 @@ const Transactions = () => {
 							<div key={t.id} className="transactions--item">
 								<i style={{backgroundColor:colours[i].colour}}></i>
 								<span className="transactions--item--text" name="date">{t.transactionDate}</span>
-								<span className="transactions--item--text" name="type">type => {t.transactionType}</span>
-								<span className="transactions--item--text" name="amount">amount => {t.transactionAmount}</span>
+								<span className="transactions--item--text" name="type">type &#8594; {t.transactionType}</span>
+								<span className="transactions--item--text" name="amount">amount &#8594; {t.transactionAmount}</span>
 							</div>
 						))
 				)}

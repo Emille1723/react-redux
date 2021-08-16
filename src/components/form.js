@@ -60,7 +60,7 @@ const Form = () => {
 			<span className="form--title">banking transactions</span>
 			{isSelect 
 			?(	<span className="form--selected--user">
-			 		account selected : { user.firstName	} {	user.lastName }  <br/> <br/>  current balance:  ${ user.amount }
+			 		account selected &#8594; { user.firstName	} {	user.lastName }  <br/> <br/>  current balance &#8594;  ${ user.amount }
 				</span>)
 			: (
 				<span className="form--selected--user">

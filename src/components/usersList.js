@@ -64,7 +64,7 @@ const UsersList = () => {
 								${user.amount}
 							</span>
 							<span className="userList--item--lastWorked">
-								last worked : {user.lastWorked}
+								last worked &#8594; {user.lastWorked}
 							</span>
 							<i className="userList--item--selected"></i>
 						</label>
