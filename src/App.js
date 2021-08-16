@@ -16,14 +16,15 @@ function App() {
 
 
 	// can reference state like this to return all key values
-	// const state = useSelector( (state) => state);
-	// console.log(state);
+	const state = useSelector( (state) => state.users);
+	console.log(state);
 
 	//or return state.reducerName eg. 'state.account' to see that value alone returned
 	const form = useSelector( (state) => state.form );
 	const bank = useSelector( (state) => state.bank );
+	const user = useSelector(	(state) => state.user);
 	const users = useSelector(	(state) => state.users );
-	console.log('rendered : form => ', form, '\n bank => ', bank, '\n users => ', users);
+	console.log('rendered state : ', '\n form => ', form, '\n bank => ', bank, '\n user => ', user, '\n users => ', users);
 	const dispatch = useDispatch();
 
 	// can call all of the actionCreators like this
@@ -34,16 +35,6 @@ function App() {
 	const {newTransaction, depositMoney, withdrawMoney } = bindActionCreators(actionCreators, dispatch);
 
 
-
-	// useEffect( () => {
-	// 	const getTasks  = async () => {
-    //         const tasksfromserver = await getUsers();
-    //         fetchUsers(tasksfromserver);
-    //     }
-	// 	getTasks();
-	// });
-
-    //fetch data from database
 
 	
 

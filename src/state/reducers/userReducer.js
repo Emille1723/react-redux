@@ -1,5 +1,8 @@
 const initialState = {
-	user : {}
+	firstName : "",
+	lastName : "",
+	amount : "",
+	
 };
 
 
@@ -8,9 +11,12 @@ const reducer = (state = initialState, action) => {
 	const {type, payload} = action;
 	switch(type){
 		case "SELECTED_USER":
-			return {...state, user : payload};
+			return {...state, payload};
 		default:
 			return state;
 	}
 
 }
+
+
+export default reducer;

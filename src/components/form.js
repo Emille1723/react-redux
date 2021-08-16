@@ -21,8 +21,8 @@ const Form = () => {
 
 	const { newTransaction } = bindActionCreators(actionCreators, dispatch);
 
-	const user = useSelector(	(state) => state.user);
-	console.log();
+	const user = useSelector(	(state) => state.user.payload);
+	console.log(user, 'from form.js');
 
 
 	// const handleChange = () => {
@@ -58,7 +58,9 @@ const Form = () => {
 	return (
 		<form className="form" onSubmit={handleSubmit}>
 			<span className="form--title">banking transactions</span>
-			<span className="form--selected--user"></span>
+			<span className="form--selected--user">
+				account selected : { user.firstName	} {	user.lastName }  <br/> <br/>  current balance { user.amount }
+			</span>
 			<div className="form--input--wrapper" name="text">
 				<input 
 					type="text" 

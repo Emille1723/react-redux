@@ -38,7 +38,7 @@ const UsersList = () => {
 	const dispatch = useDispatch();
 	// setting up actionCreators to fetchusers and update global state instead of typing i tlong way
 	// const ActionCreators = bindActionCreators(actionCreators, dispatch);
-	const { fetchUsers, loadUsers } = bindActionCreators(actionCreators, dispatch);
+	const { selectUser, fetchUsers, loadUsers } = bindActionCreators(actionCreators, dispatch);
 
 	useEffect(() => {
         const getUsers  = async () => {
@@ -47,20 +47,22 @@ const UsersList = () => {
         getUsers();
     }, []);
 
-	useEffect(() => {
-		const userSelect = async (id) => {
-			alert('checked => ', id);
-		}
-	}, {});
 
-
-	const returnID = (id) => {
-		alert('id => ', id);
-		return id;
+	// fetch userid collected from checked radio button
+	const fetchUser = async (id, dispatch) => {
+		const res = await fetch(`http://localhost:5000/people/${id}`);
+		const user = await res.json();
+		selectUser(user);	
 	}
 
-	const users = useSelector(	(state) => state.users.users);
-	console.log('userList component => ', users);
+	// handle radio checked event to select user 
+	const handleChange = (evt) => {
+		const { id } = evt.target;
+		fetchUser(id);
+	}
+
+	// grab users state
+	const users = useSelector(	(state) => state.users.users );
 
 
 	
@@ -69,15 +71,14 @@ const UsersList = () => {
 			<span className="userList--title">users listing</span>
 			<div className="userList--item--wrapper">
 				{ users.map((user,i) => (
-					<>
-						<input className="userList--radios" 
-							id={user.id} 
+					<div key={user.id}>
+						<input className="userList--radios"  
+							id = {user.id} 
 							type="radio" 
-							key={user.id} 
 							name="radios"
-							onChecked = {returnID(user.id)}
+							onChange = { handleChange }
 						/>
-						<label htmlFor={user.id} className="userList--item" key={user.id}>
+						<label htmlFor={user.id} className="userList--item">
 							<span className="userList--item--image" style={{borderColor:colours[i].colour}}>
 								<i></i>
 							</span>
@@ -90,9 +91,9 @@ const UsersList = () => {
 							<span className="userList--item--lastWorked">
 								last worked : {user.lastWorked}
 							</span>
-							<i className="userList--item--selected" onClick={userSelect(user.id)}></i>
+							<i className="userList--item--selected"></i>
 						</label>
-					</>
+					</div>
 				))}
 			</div>
 		</div>
