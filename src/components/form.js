@@ -11,8 +11,8 @@ const Form = () => {
 	const dispatch = useDispatch();
 	const [amount, setAmount] = useState("");
 	const [transaction, setTransaction] = useState("");
-	const [deposit, setDeposit] = useState(false);
-	const [withdraw, setWithdraw] = useState(false);
+	// const [deposit, setDeposit] = useState(false);
+	// const [withdraw, setWithdraw] = useState(false);
 
 	const submittedData = {
 		amount : '',
@@ -25,27 +25,42 @@ const Form = () => {
 	const isSelect = useSelector( (state) => state.user.isSelected );
 
 	// user state
-	const user = useSelector( (state) => state.user.payload );
+	const user = useSelector( (state) => state.user.user );
 
 
 	
 	const handleSubmit = evt => {
 		evt.preventDefault();
-		submittedData.amount = amount;
-		submittedData.transactionType = 'some transaction value bruv';
 
+		if(validateForm() === true){
+			submittedData.amount = amount;
+			// submittedData.transactionType = handleRadios;
 
-		setAmount('');
-		setDeposit(false);
-		setWithdraw(false);
-		setTransaction('');
-		newTransaction(submittedData);
+			setAmount('');
+			setTransaction('');
+			alert('submitted');
+			newTransaction(submittedData);
 
-		// formActivity();
+			// formActivity();
+		}
+		else{
+			alert('Unable to process function');
+		}
+	}
+
+	const validateForm = () => {
+		if(submittedData.transactionType === ''){
+			alert('Complete form to continue!');
+			return false;
+		}
+		else{
+			return true;
+		}
 	}
 
 	const handleRadios = evt => {
 		evt.preventDefault();
+		submittedData.transactionType = evt.target.value;
 	}
 
 	// const formActivity = () => {
@@ -73,6 +88,7 @@ const Form = () => {
 					className="form--input"
 					value = {amount}
 					onChange = { (evt) => setAmount(evt.target.value) } 
+					pattern="[0-9]{1,10000}"
 					required
 				/>
 				<label className="form--input--label">amount to be tendered</label>
@@ -83,9 +99,10 @@ const Form = () => {
 					className="form--input"
 					name="radios"
 					id="radio--deposit"
-					// checked = {deposit}
-					// value = {deposit}
-					onChange = {(evt) => setDeposit(evt.currentTarget.checked)}
+					value = "Deposit"
+					onChange = {handleRadios}
+					// onChange = {(evt) => setDeposit(evt.target.value)}
+					// onChange = {(evt) => setDeposit(evt.currentTarget.checked)}
 				/>
 				<label 
 					htmlFor="radio--deposit" 
@@ -95,9 +112,10 @@ const Form = () => {
 					className="form--input" 
 					name="radios"
 					id="radio--withdraw"
-					// checked = {withdraw}
-					// value = {withdraw}
-					onChange = {(evt) => setWithdraw(evt.currentTarget.checked)}
+					value = "Withdraw"
+					onChange = {handleRadios}
+					// onChange = {(evt) => setDeposit(evt.target.value)}
+					// onChange = {(evt) => setWithdraw(evt.currentTarget.checked)}
 				/>
 				<label 
 					htmlFor="radio--withdraw" 

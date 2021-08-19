@@ -12,6 +12,7 @@
 			width:100%;
 			font-size:.75rem;
 			color:white;
+			text-transform:uppercase;
 		}
 		.transactions--item{
 			@extend .inlineBlock;

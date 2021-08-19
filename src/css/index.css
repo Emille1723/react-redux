@@ -201,7 +201,8 @@ body {
   .transactions .transactions--wrapper .transactions--wrapper--message {
     width: 100%;
     font-size: .75rem;
-    color: white; }
+    color: white;
+    text-transform: uppercase; }
   .transactions .transactions--wrapper .transactions--item {
     width: 100%;
     background-color: rgba(255, 255, 255, 0.05);

@@ -19,7 +19,6 @@ const Transactions = () => {
 				{T.length == 0 
 					? (<span className="transactions--wrapper--message">no history to show yet</span>)
 					: (
-						// <span class="transactions--wrapper--message">some history to show</span>
 						T.map((t,i) => (
 							<div key={t.id} className="transactions--item">
 								<i style={{backgroundColor:colours[i].colour}}></i>
