@@ -87,7 +87,7 @@ body {
   width: 100%;
   margin: 5vh 0; }
 .form .form--input--wrapper[name="text"] .form--input--label {
-  top: 4vh;
+  top: 0%;
   width: 100%;
   color: white;
   font-size: .75rem;
@@ -98,8 +98,6 @@ body {
   padding: 4vh 0 2.5vh 0;
   border-bottom: 1px solid white;
   font-size: .75rem; }
-.form .form--input--wrapper[name="text"] .form--input:focus + .form--input--label {
-  top: 0%; }
 .form .form--input--wrapper[name="radio"] .form--input[name="radios"] {
   display: none; }
 .form .form--input--wrapper[name="radio"] .form--input--label {

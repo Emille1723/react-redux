@@ -28,100 +28,90 @@ const Form = () => {
 	const user = useSelector( (state) => state.user.user );
 
 
-	
-	const handleSubmit = evt => {
-		evt.preventDefault();
-
-		if(validateForm() === true){
-			submittedData.amount = amount;
-			// submittedData.transactionType = handleRadios;
-
-			setAmount('');
-			setTransaction('');
-			alert('submitted');
-			newTransaction(submittedData);
-
-			// formActivity();
-		}
-		else{
-			alert('Unable to process function');
-		}
-	}
-
-	const validateForm = () => {
-		if(submittedData.transactionType === ''){
-			alert('Complete form to continue!');
-			return false;
-		}
-		else{
-			return true;
-		}
-	}
 
 	const handleRadios = evt => {
-		evt.preventDefault();
 		submittedData.transactionType = evt.target.value;
 	}
+	
 
-	// const formActivity = () => {
-	// 	dispatch({
-	// 		type : 'NEW_TRANSACTION',
-	// 		payload : submittedData
-	// 	});
-	// }
+	const handleSubmit = evt => {
+		evt.preventDefault();
+		submittedData.amount = amount;
+
+		if(submittedData.transactionType === ''){
+			alert('Unable to process function, ensure that the form is completed');
+		}
+		else{
+			setAmount('');
+			evt.target.reset();
+			initBank(submittedData);
+			newTransaction(submittedData);
+		}
+	}
+
+	const initBank = (formData) => {
+		
+	}
+
 
 	return (
-		<form className="form" onSubmit={handleSubmit}>
+		<form className="form" autocomplete="off" onSubmit={handleSubmit}>
 			<span className="form--title">banking transactions</span>
 			{isSelect 
-			?(	<span className="form--selected--user">
-			 		account selected &#8594; { user.firstName	} {	user.lastName }  <br/> <br/>  current balance &#8594;  ${ user.amount }
-				</span>)
+			?(	
+				<>
+					<span className="form--selected--user">
+						account selected &#61;&gt; { user.firstName	} {	user.lastName }  <br/> <br/>  current balance &#61;&gt;   ${ user.amount }
+					</span>
+					<div className="form--input--wrapper" name="text">
+						<input 
+							type="text" 
+							// className="form--input"
+							className={`form--input`}
+							value = {amount}
+							onChange = { (evt) => setAmount(evt.target.value) } 
+							pattern="[0-9]{1,10000}"
+							name="text--amount"
+							required
+						/>
+						<label className="form--input--label amount--input--label">amount to be tendered</label>
+					</div>
+					<div className="form--input--wrapper" name="radio">
+						<input 
+							type="radio" 
+							className="form--input"
+							name="radios"
+							id="radio--deposit"
+							value = "Deposit"
+							onChange = {handleRadios}
+							// onChange = {(evt) => setDeposit(evt.target.value)}
+							// onChange = {(evt) => setDeposit(evt.currentTarget.checked)}
+						/>
+						<label 
+							htmlFor="radio--deposit" 
+							className="form--input--label">deposit</label>
+						<input 
+							type="radio" 
+							className="form--input" 
+							name="radios"
+							id="radio--withdraw"
+							value = "Withdraw"
+							onChange = {handleRadios}
+							// onChange = {(evt) => setDeposit(evt.target.value)}
+							// onChange = {(evt) => setWithdraw(evt.currentTarget.checked)}
+						/>
+						<label 
+							htmlFor="radio--withdraw" 
+							className="form--input--label">withdraw</label>
+					</div>
+					<input type="submit" className="form--submit" value="complete transaction"/>
+				</>
+				)
 			: (
 				<span className="form--selected--user">
-			 		select an account to continue
+			 		select an account to perform a transaction
 				</span>
 			)};
-			<div className="form--input--wrapper" name="text">
-				<input 
-					type="text" 
-					className="form--input"
-					value = {amount}
-					onChange = { (evt) => setAmount(evt.target.value) } 
-					pattern="[0-9]{1,10000}"
-					required
-				/>
-				<label className="form--input--label">amount to be tendered</label>
-			</div>
-			<div className="form--input--wrapper" name="radio">
-				<input 
-					type="radio" 
-					className="form--input"
-					name="radios"
-					id="radio--deposit"
-					value = "Deposit"
-					onChange = {handleRadios}
-					// onChange = {(evt) => setDeposit(evt.target.value)}
-					// onChange = {(evt) => setDeposit(evt.currentTarget.checked)}
-				/>
-				<label 
-					htmlFor="radio--deposit" 
-					className="form--input--label">deposit</label>
-				<input 
-					type="radio" 
-					className="form--input" 
-					name="radios"
-					id="radio--withdraw"
-					value = "Withdraw"
-					onChange = {handleRadios}
-					// onChange = {(evt) => setDeposit(evt.target.value)}
-					// onChange = {(evt) => setWithdraw(evt.currentTarget.checked)}
-				/>
-				<label 
-					htmlFor="radio--withdraw" 
-					className="form--input--label">withdraw</label>
-			</div>
-			<input type="submit" className="form--submit" value="complete transaction"/>
 		</form>
 	)
 }
