@@ -22,11 +22,11 @@ function App() {
 	//or return state.reducerName eg. 'state.account' to see that value alone returned
 	const colours = useSelector( (state) => state.colours );
 	const form = useSelector( (state) => state.form );
-	const bank = useSelector( (state) => state.bank );
+	// const bank = useSelector( (state) => state.bank );
 	const user = useSelector( (state) => state.user );
 	const users = useSelector( (state) => state.users );
 	const transactions = useSelector( (state) => state.transactions );
-	console.log('rendered state : ', '\n form => ', form, '\n bank => ', bank, '\n user => ', user, '\n users => ', users, '\n transactions => ', transactions);
+	console.log('rendered state : ', '\n form => ', form, '\n user => ', user, '\n users => ', users, '\n transactions => ', transactions);
 	const dispatch = useDispatch();
 
 	// can call all of the actionCreators like this

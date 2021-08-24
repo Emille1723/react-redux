@@ -10,6 +10,12 @@ const reducer = (state = initialState, action) => {
 	switch(type){
 		case "SELECTED_USER":
 			return {...state, isSelected : true, user : payload};
+		case "TRANSACTION_DEPOSIT":
+			state.user.amount = parseFloat(state.user.amount) + parseFloat(payload);
+			return {...state, isSelected : true};
+		case "TRANSACTION_WITHDRAW":
+			state.user.amount = parseFloat(state.user.amount) - parseFloat(payload);
+			return {...state, isSelected : true};
 		default:
 			return state;
 	}

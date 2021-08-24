@@ -19,7 +19,7 @@ const Form = () => {
 		transactionType : '',
 	};
 
-	const { newTransaction } = bindActionCreators(actionCreators, dispatch);
+	const { newTransaction,  transDeposit, transWithdraw} = bindActionCreators(actionCreators, dispatch);
 
 	// isSelected is a boolean that updates once an account is checked
 	const isSelect = useSelector( (state) => state.user.isSelected );
@@ -50,12 +50,17 @@ const Form = () => {
 	}
 
 	const initBank = (formData) => {
-		
+		{
+			formData.transactionType === "Deposit" ? (
+				transDeposit(submittedData.amount)
+			):(
+				transWithdraw(submittedData.amount)
+			)};
 	}
 
 
 	return (
-		<form className="form" autocomplete="off" onSubmit={handleSubmit}>
+		<form className="form" autoComplete="off" onSubmit={handleSubmit}>
 			<span className="form--title">banking transactions</span>
 			{isSelect 
 			?(	

@@ -2,7 +2,7 @@ import { useReducer } from 'react';
 import { combineReducers } from 'redux';
 import coloursReducer from './coloursReducer';
 import formReducer from './formReducer';
-import bankReducer from './bankReducer';
+// import bankReducer from './bankReducer';
 import userReducer from './userReducer';
 import usersReducer from './usersReducer';
 import transactionsReducer from './transactionsReducer';
@@ -12,7 +12,7 @@ import transactionsReducer from './transactionsReducer';
 const rootReducer = combineReducers({
 	colours : coloursReducer,
 	form : formReducer,
-	bank: bankReducer,
+	// bank: bankReducer,
 	user : userReducer,
 	users : usersReducer,
 	transactions : transactionsReducer

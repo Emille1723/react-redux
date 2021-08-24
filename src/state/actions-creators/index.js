@@ -75,6 +75,22 @@ export const newTransaction = ( formData ) => {
 		});
 	}
 }
+export const transDeposit = (amount) => {
+	return (dispatch) => {
+		dispatch({
+			type: "TRANSACTION_DEPOSIT",
+			payload : amount
+		});
+	}
+}
+export const transWithdraw = (amount) => {
+	return (dispatch) => {
+		dispatch({
+			type: "TRANSACTION_WITHDRAW",
+			payload : amount
+		});
+	}
+}
 export const depositMoney = ( amount ) => {
 	return (dispatch) => {
 		dispatch({
