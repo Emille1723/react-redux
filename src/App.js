@@ -16,8 +16,7 @@ function App() {
 
 
 	// can reference state like this to return all key values
-	const state = useSelector( (state) => state.users);
-	console.log(state);
+	const state = useSelector( (state) => state);
 
 	//or return state.reducerName eg. 'state.account' to see that value alone returned
 	const colours = useSelector( (state) => state.colours );
@@ -30,11 +29,11 @@ function App() {
 	const dispatch = useDispatch();
 
 	// can call all of the actionCreators like this
-	const ActionCreators = bindActionCreators(actionCreators, dispatch);
+	// const ActionCreators = bindActionCreators(actionCreators, dispatch);
 
 
 	//or can call them in a destructured format
-	const {newTransaction, depositMoney, withdrawMoney } = bindActionCreators(actionCreators, dispatch);
+	// const {newTransaction, depositMoney, withdrawMoney } = bindActionCreators(actionCreators, dispatch);
 
 
 

@@ -55,7 +55,13 @@ const Form = () => {
 				transDeposit(submittedData.amount)
 			):(
 				transWithdraw(submittedData.amount)
-			)};
+			)
+			updateUser();
+		};
+	}
+
+	const updateUser = () => {
+		console.log('user updated => ', user);
 	}
 
 
