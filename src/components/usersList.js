@@ -46,6 +46,8 @@ const UsersList = () => {
 			<span className="userList--title">users listing</span>
 			<div className="userList--item--wrapper">
 				{ users.map((user,i) => (
+					// normally after the '=>' function uses '()' but can use '{}' to add JS code and functionality 
+					// console.log(user.transactions);
 					<div key={user.id}>
 						<input className="userList--radios"  
 							id = {user.id} 

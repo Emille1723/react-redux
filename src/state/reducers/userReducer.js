@@ -16,6 +16,8 @@ const reducer = (state = initialState, action) => {
 		case "TRANSACTION_WITHDRAW":
 			state.user.amount = parseFloat(state.user.amount) - parseFloat(payload);
 			return {...state, isSelected : true};
+		case "UPDATE_USER":
+			return state;
 		default:
 			return state;
 	}

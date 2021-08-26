@@ -9,7 +9,6 @@ const Transactions = () => {
 
 	const colours = useSelector( (state) => state.colours.colours );
 	const T = useSelector( (state) => state.transactions.transactions);
-	console.log(T);
 
 
 	return (
@@ -26,7 +25,7 @@ const Transactions = () => {
 								<span className="transactions--item--text" name="type">type &#61;&gt;  {t.transactionType}</span>
 								<span className="transactions--item--text" name="amount">amount &#61;&gt;  {t.transactionAmount}</span>
 							</div>
-						))
+						)).reverse()
 				)}
 			</div>
 		</div>

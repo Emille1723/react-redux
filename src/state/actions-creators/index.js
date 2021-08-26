@@ -1,7 +1,7 @@
 export const fetchTransactions = (transactions) => {
 	return (dispatch) => {
 		dispatch({
-			type: "FETCHED_TRANSACTIONS",
+			type: "FETCHED_TRANSACTIONS_LOG",
 			payload : transactions
 		});
 	}
@@ -66,6 +66,15 @@ export const selectUser = (user) => {
 // 	}
 // }
 
+
+export const userPostOp = (	log ) => {
+	return (dispatch) => {
+		dispatch({
+			type: "UPDATE_USER",
+			payload : log
+		});
+	}
+}
 // action creator for new transaction
 export const newTransaction = ( formData ) => {
 	return (dispatch) => {
