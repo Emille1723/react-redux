@@ -24,6 +24,38 @@ const initialState = {
             id:5,
             colour : '#607d8b'
         },
+		{
+            id:6,
+            colour : '#F5CBA7'
+        },
+		{
+            id:7,
+            colour : '#C0C0C0'
+        },
+		{
+            id:8,
+            colour : '#7D3C98'
+        },
+		{
+            id:9,
+            colour : '#F4D03F'
+        },
+		{
+            id:10,
+            colour : '#2E86C1'
+        },
+		{
+            id:11,
+            colour : '#943126'
+        },
+		{
+            id:12,
+            colour : '#AAB7B8'
+        },
+		{
+            id:13,
+            colour : '#48C9B0'
+        },
     ]
 };
 

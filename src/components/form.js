@@ -72,8 +72,8 @@ const Form = () => {
 	const updateUser = () => {
 		const d = new Date();
 		const date = d.getDate();
-		const month = parseInt(d.getMonth());
-		// month < 10 ? month = month + 1 : month = month;
+		let month = parseInt(d.getMonth());
+		month < 10 ? month = month + 1 : month = month;
 		const year = d.getFullYear();
 		const transLog = {
 			id : 0,

@@ -4,8 +4,8 @@
       "id": 0,
       "firstName": "John",
       "lastName": "Doe",
-      "amount": 50000,
-      "lastWorked": "26.8.2021",
+      "amount": 50250.25,
+      "lastWorked": "26.7.2021",
       "transactions": [
         {
           "id": 0,
@@ -41,6 +41,13 @@
           "transactionDate": "26.8.2021",
           "transactionType": "withdraw",
           "transactionAmount": "4000"
+        },
+        {
+          "id": 6,
+          "userID": 0,
+          "transactionDate": "26.8.2021",
+          "transactionType": "deposit",
+          "transactionAmount": "250.25"
         }
       ]
     },
@@ -49,7 +56,7 @@
       "firstName": "Jane",
       "lastName": "Doe",
       "amount": 35500,
-      "lastWorked": "26.7.2021",
+      "lastWorked": "26.8.2021",
       "transactions": [
         {
           "id": 0,
@@ -75,7 +82,7 @@
         {
           "id": 4,
           "userID": 1,
-          "transactionDate": "26.7.2021",
+          "transactionDate": "26.8.2021",
           "transactionType": "deposit",
           "transactionAmount": "500"
         }
@@ -108,7 +115,7 @@
       "id": 3,
       "firstName": "Janice",
       "lastName": "Doe",
-      "amount": 10000,
+      "amount": 5000,
       "lastWorked": "26.8.2021",
       "transactions": [
         {
@@ -131,6 +138,20 @@
           "transactionDate": "26.8.2021",
           "transactionType": "withdraw",
           "transactionAmount": "5250.45"
+        },
+        {
+          "id": 4,
+          "userID": 3,
+          "transactionDate": "26.8.2021",
+          "transactionType": "withdraw",
+          "transactionAmount": "2500"
+        },
+        {
+          "id": 5,
+          "userID": 3,
+          "transactionDate": "26.8.2021",
+          "transactionType": "withdraw",
+          "transactionAmount": "2500"
         }
       ]
     },
@@ -138,7 +159,7 @@
       "id": 4,
       "firstName": "Jenny",
       "lastName": "Doe",
-      "amount": 177500,
+      "amount": 20525.75,
       "lastWorked": "26.8.2021",
       "transactions": [
         {
@@ -154,6 +175,48 @@
           "transactionDate": "26.8.2021",
           "transactionType": "deposit",
           "transactionAmount": "2500"
+        },
+        {
+          "id": 3,
+          "userID": 4,
+          "transactionDate": "26.8.2021",
+          "transactionType": "withdraw",
+          "transactionAmount": "2500"
+        },
+        {
+          "id": 4,
+          "userID": 4,
+          "transactionDate": "26.8.2021",
+          "transactionType": "deposit",
+          "transactionAmount": "25000"
+        },
+        {
+          "id": 5,
+          "userID": 4,
+          "transactionDate": "26.8.2021",
+          "transactionType": "withdraw",
+          "transactionAmount": "9000"
+        },
+        {
+          "id": 6,
+          "userID": 4,
+          "transactionDate": "26.8.2021",
+          "transactionType": "withdraw",
+          "transactionAmount": "10000"
+        },
+        {
+          "id": 7,
+          "userID": 4,
+          "transactionDate": "26.8.2021",
+          "transactionType": "withdraw",
+          "transactionAmount": "180000"
+        },
+        {
+          "id": 8,
+          "userID": 4,
+          "transactionDate": "26.8.2021",
+          "transactionType": "deposit",
+          "transactionAmount": "19525.75"
         }
       ]
     }

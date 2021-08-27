@@ -14,19 +14,21 @@ const Transactions = () => {
 	return (
 		<div className="transactions">
 			<span className="transactions--title">transaction history</span>
-			<div className="transactions--wrapper">
-				{T.length == 0 
-					? (<span className="transactions--wrapper--message">select an account to view an account's transaction history</span>)
-					: (
-						T.map((t,i) => (
-							<div key={t.id} className="transactions--item">
-								<i style={{backgroundColor:colours[i].colour}}></i>
-								<span className="transactions--item--text" name="date">{t.transactionDate}</span>
-								<span className="transactions--item--text" name="type">type &#61;&gt;  {t.transactionType}</span>
-								<span className="transactions--item--text" name="amount">amount &#61;&gt;  {t.transactionAmount}</span>
-							</div>
-						)).reverse()
-				)}
+			<div class="transactions--wrapper--wrapper">
+				<div className="transactions--wrapper">
+					{T.length == 0 
+						? (<span className="transactions--wrapper--message">select an account to view an account's transaction history</span>)
+						: (
+							T.map((t,i) => (
+								<div key={t.id} className="transactions--item">
+									<i style={{backgroundColor:colours[i].colour}}></i>
+									<span className="transactions--item--text" name="date">{t.transactionDate}</span>
+									<span className="transactions--item--text" name="type">type &#61;&gt;  {t.transactionType}</span>
+									<span className="transactions--item--text" name="amount">amount &#61;&gt;  {t.transactionAmount}</span>
+								</div>
+							)).reverse()
+					)}
+				</div>
 			</div>
 		</div>
 	)
